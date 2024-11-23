@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="vn.edu.tinhoc123.CoffeeMan007.controllers.EmployeeController" 
+      prefWidth="900" prefHeight="700">
+
+    <!-- Tiêu đề -->
+    <Label text="Quản Lý Nhân Viên" layoutX="350" layoutY="10" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <!-- Form thông tin nhân viên -->
+    <Label text="Tên Nhân Viên:" layoutX="50" layoutY="60" />
+    <TextField fx:id="nameField" layoutX="200" layoutY="60" prefWidth="400" />
+
+    <Label text="Chức Vụ:" layoutX="50" layoutY="100" />
+    <TextField fx:id="positionField" layoutX="200" layoutY="100" prefWidth="400" />
+
+    <Label text="Lương:" layoutX="50" layoutY="140" />
+    <TextField fx:id="salaryField" layoutX="200" layoutY="140" prefWidth="400" />
+
+    <Label text="Số Điện Thoại:" layoutX="50" layoutY="180" />
+    <TextField fx:id="phoneField" layoutX="200" layoutY="180" prefWidth="400" />
+
+    <Label text="Email:" layoutX="50" layoutY="220" />
+    <TextField fx:id="emailField" layoutX="200" layoutY="220" prefWidth="400" />
+
+    <Label text="Trạng Thái:" layoutX="50" layoutY="260" />
+    <CheckBox fx:id="isActiveField" layoutX="200" layoutY="260" />
+
+    <Label text="Tên Đăng Nhập:" layoutX="50" layoutY="300" />
+    <TextField fx:id="usernameField" layoutX="200" layoutY="300" prefWidth="400" />
+
+    <Label text="Mật Khẩu:" layoutX="50" layoutY="340" />
+    <PasswordField fx:id="passwordField" layoutX="200" layoutY="340" prefWidth="400" />
+
+    <Label text="Số Căn Cước:" layoutX="50" layoutY="380" />
+    <TextField fx:id="idCardNumberField" layoutX="200" layoutY="380" prefWidth="400" />
+
+    <!-- Các nút Thêm, Sửa, Xóa -->
+    <Button text="Thêm" fx:id="addButton" layoutX="650" layoutY="60" prefWidth="100" onAction="#handleAddEmployee" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+    <Button text="Sửa" fx:id="editButton" layoutX="650" layoutY="100" prefWidth="100" onAction="#handleEditEmployee" style="-fx-background-color: #FF9800; -fx-text-fill: white;" />
+    <Button text="Xóa" fx:id="deleteButton" layoutX="650" layoutY="140" prefWidth="100" onAction="#handleDeleteEmployee" style="-fx-background-color: #F44336; -fx-text-fill: white;" />
+
+    <!-- Bảng hiển thị danh sách nhân viên -->
+    <TableView fx:id="employeeTableView" layoutX="50" layoutY="450" prefWidth="800" prefHeight="200">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50" />
+            <TableColumn text="Tên Nhân Viên" fx:id="nameColumn" prefWidth="150" />
+            <TableColumn text="Chức Vụ" fx:id="positionColumn" prefWidth="100" />
+            <TableColumn text="Lương" fx:id="salaryColumn" prefWidth="100" />
+            <TableColumn text="Số Điện Thoại" fx:id="phoneColumn" prefWidth="100" />
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="100" />
+            <TableColumn text="Trạng Thái" fx:id="isActiveColumn" prefWidth="75" />
+            <TableColumn text="Tên Đăng Nhập" fx:id="usernameColumn" prefWidth="150" />
+            <TableColumn text="Số Căn Cước" fx:id="idCardNumberColumn" prefWidth="100" />
+        </columns>
+    </TableView>
+
+    <!-- Thông báo lỗi hoặc trạng thái -->
+    <Label fx:id="errorMessageLabel" layoutX="50" layoutY="670" style="-fx-text-fill: red;" />
+</AnchorPane>
